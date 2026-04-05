@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ketick Command Center</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="top-header">
+        <div class="logo">KETICK HUB</div>
+        
+        <div class="toggle-container">
+            <span id="mode-label">Mode 1 (Ungu)</span>
+            <label class="switch">
+                <input type="checkbox" id="mode-toggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <section id="view-mode1">
+            <div class="login-wrapper">
+                <div class="card login-card">
+                    <h2>Log in to your account</h2>
+                    <p class="text-muted">Welcome back! Please enter your details.</p>
+                    
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="admin@ketick.my">
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" placeholder="••••••••">
+                    </div>
+                    
+                    <button class="btn-primary">Log In</button>
+                </div>
+
+                <div class="card visual-card">
+                    <h3>Diverse Crypto Assets</h3>
+                    <div class="purple-graphic"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-mode2" style="display: none;">
+            <div class="dashboard-wrapper">
+                <aside class="sidebar card">
+                    <h2 class="highlight-text">DANWELL</h2>
+                    <ul class="sidebar-menu">
+                        <li class="active">Dashboard</li>
+                        <li>My account</li>
+                        <li>Investments</li>
+                        <li>Team</li>
+                        <li>My finances</li>
+                    </ul>
+                </aside>
+
+                <div class="dashboard-content">
+                    <div class="top-stats">
+                        <div class="card stat-card">
+                            <h4>Master Account</h4>
+                            <h2 class="highlight-text">2,632.00 <span class="text-muted">USDT</span></h2>
+                        </div>
+                        <div class="card stat-card">
+                            <h4>Personal Deposit</h4>
+                            <h2>12,450.00 <span class="text-muted">USDT</span></h2>
+                        </div>
+                    </div>
+
+                    <div class="card chart-card">
+                        <h4>Income From Licenses</h4>
+                        <div class="chart-placeholder">Grafik akan dipaparkan di sini</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
