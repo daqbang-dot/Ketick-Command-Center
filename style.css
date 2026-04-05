@@ -180,16 +180,10 @@ input:checked + .slider:before { transform: translateX(22px); }
     gap: 20px;
 }
 
-.chart-placeholder {
-    height: 200px;
+/* KEMASKINI GAYA UNTUK CHART CONTAINER */
+.chart-container {
     border-top: 2px solid var(--accent-color);
-    background: linear-gradient(to bottom, var(--accent-glow), transparent);
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-muted);
-    border-radius: 8px;
+    padding-top: 15px;
 }
 
 /* Responsif untuk Smartphone */
@@ -202,7 +196,7 @@ input:checked + .slider:before { transform: translateX(22px); }
 }
 
 /* =========================================
-   5. GAYA KAD STATUS RANGKAIAN (BARU DITAMBAH)
+   5. GAYA KAD STATUS RANGKAIAN
 ========================================= */
 .status-card {
     margin-top: 20px;
