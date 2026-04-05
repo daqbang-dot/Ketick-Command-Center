@@ -1,0 +1,202 @@
+/* =========================================
+   1. PEMBOLEHUBAH WARNA (THEMES)
+========================================= */
+
+/* LALAI: MODE 1 (Tema Ungu Gelap) */
+:root {
+    --bg-main: #0a0b10;
+    --bg-card: #13141f;
+    --accent-color: #4D2FFF;
+    --accent-glow: rgba(77, 47, 255, 0.3);
+    --text-primary: #FFFFFF;
+    --text-muted: #808CB3;
+    --border-color: #2a2b3d;
+    --font-main: 'Urbanist', sans-serif;
+}
+
+/* TOGGLE: MODE 2 (Tema Hijau Neon/Cyan) */
+[data-theme="mode2"] {
+    --bg-main: #0B0E14;
+    --bg-card: #151A22;
+    --accent-color: #00E676;
+    --accent-glow: rgba(0, 230, 118, 0.2);
+    --text-primary: #F3F4F6;
+    --text-muted: #9CA3AF;
+    --border-color: #1F2937;
+}
+
+/* =========================================
+   2. GAYA GLOBAL
+========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    transition: all 0.4s ease;
+    min-height: 100vh;
+}
+
+/* Header & Toggle Suis */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-card);
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Suis Animasi Toggle */
+.switch { position: relative; display: inline-block; width: 50px; height: 28px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--border-color); transition: .4s; }
+.slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 4px; bottom: 4px; background-color: var(--text-primary); transition: .4s; }
+input:checked + .slider { background-color: var(--accent-color); }
+input:checked + .slider:before { transform: translateX(22px); }
+.slider.round { border-radius: 34px; }
+.slider.round:before { border-radius: 50%; }
+
+/* Komponen Asas */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px var(--accent-glow);
+    transition: all 0.4s ease;
+}
+
+.text-muted { color: var(--text-muted); font-size: 0.9rem; }
+.highlight-text { color: var(--accent-color); }
+
+.main-container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   3. SUSUN ATUR MODE 1 (UNGU)
+========================================= */
+.login-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.input-group {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group input {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-family: var(--font-main);
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    margin-top: 24px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.purple-graphic {
+    height: 300px;
+    background: linear-gradient(135deg, var(--accent-color), transparent);
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+/* =========================================
+   4. SUSUN ATUR MODE 2 (HIJAU NEON)
+========================================= */
+.dashboard-wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.sidebar {
+    width: 250px;
+    height: calc(100vh - 150px);
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.sidebar-menu li {
+    padding: 12px 0;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.sidebar-menu li.active {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.dashboard-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.top-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.chart-placeholder {
+    height: 200px;
+    border-top: 2px solid var(--accent-color);
+    background: linear-gradient(to bottom, var(--accent-glow), transparent);
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    border-radius: 8px;
+}
+
+/* Responsif untuk Smartphone */
+@media (max-width: 768px) {
+    .login-wrapper, .dashboard-wrapper {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+    .sidebar { width: 100%; height: auto; }
+}
