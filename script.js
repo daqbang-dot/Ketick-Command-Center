@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const statusListContainer = document.getElementById('domain-status-list');
 
-    // Jika elemen tidak wujud (contohnya pengguna di Mode 1), elakkan ralat
     if(statusListContainer) {
         function renderStatusList() {
             statusListContainer.innerHTML = '';
@@ -92,5 +91,61 @@ document.addEventListener("DOMContentLoaded", () => {
         renderStatusList();
         setTimeout(checkDomainStatus, 1500);
         setInterval(checkDomainStatus, 60000);
+    }
+
+    // ==========================================
+    // FUNGSI GRAF INTERAKTIF (CHART.JS) - BARU DITAMBAH
+    // ==========================================
+    const ctx = document.getElementById('mainChart');
+    
+    // Pastikan elemen canvas wujud sebelum lukis graf
+    if (ctx) {
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mac', 'Apr', 'Mei', 'Jun', 'Jul'],
+                datasets: [{
+                    label: 'Statistik Data',
+                    data: [120, 190, 300, 250, 400, 320, 500], // Ini data contoh (dummy)
+                    borderColor: '#00E676', // Warna Hijau Neon
+                    backgroundColor: 'rgba(0, 230, 118, 0.1)', // Hijau lutsinar
+                    borderWidth: 2,
+                    pointBackgroundColor: '#0B0E14',
+                    pointBorderColor: '#00E676',
+                    pointBorderWidth: 2,
+                    pointRadius: 4,
+                    fill: true,
+                    tension: 0.4 // Jadikan garisan melengkung (smooth)
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false // Sembunyikan label legend di atas
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.05)' // Garisan grid yang sangat pudar
+                        },
+                        ticks: {
+                            color: '#9CA3AF'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false // Buang garisan menegak
+                        },
+                        ticks: {
+                            color: '#9CA3AF'
+                        }
+                    }
+                }
+            }
+        });
     }
 });
