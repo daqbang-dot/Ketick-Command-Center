@@ -200,3 +200,65 @@ input:checked + .slider:before { transform: translateX(22px); }
     }
     .sidebar { width: 100%; height: auto; }
 }
+
+/* =========================================
+   5. GAYA KAD STATUS RANGKAIAN (BARU DITAMBAH)
+========================================= */
+.status-card {
+    margin-top: 20px;
+}
+
+.status-list {
+    list-style: none;
+    margin-top: 15px;
+    padding: 0;
+}
+
+.status-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--border-color);
+    font-size: 0.95rem;
+}
+
+.status-list li:last-child {
+    border-bottom: none;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* Warna & Glow untuk Status */
+.dot.online {
+    background-color: #00E676; /* Hijau */
+    box-shadow: 0 0 8px #00E676;
+}
+
+.dot.offline {
+    background-color: #FF3B30; /* Merah */
+    box-shadow: 0 0 8px #FF3B30;
+}
+
+.dot.checking {
+    background-color: #FFCC00; /* Kuning */
+    box-shadow: 0 0 8px #FFCC00;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
